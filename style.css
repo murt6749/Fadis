@@ -1,0 +1,240 @@
+:root {
+  --gold: #D4AF37;
+  --deep-blue: #0A2E46;
+  --moon-glow: #F8F3E6;
+  --islamic-green: #009966;
+  --light-blue: #4facfe;
+  --pink: #ff9a9e;
+  --purple: #a18cd1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--deep-blue), var(--light-blue));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Quran verses banner styling */
+.quran-banner {
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+.quran-banner p {
+  color: var(--deep-blue);
+  font-size: 1rem;
+  margin: 5px 0;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+}
+
+.form-container {
+  position: relative;
+  width: 200%;
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.login-form, .signup-form {
+  width: 50%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  animation: formSwitch 0.5s ease-in-out;
+}
+
+/* Only one form is visible on mobile */
+.login-form.active,
+.signup-form.active {
+  display: block;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--deep-blue);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid rgba(10, 46, 70, 0.1);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, var(--deep-blue), var(--islamic-green));
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: block;
+  margin: 20px auto;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, var(--islamic-green), var(--deep-blue));
+}
+
+.toggle-phone-btn {
+  background: none;
+  border: none;
+  color: var(--deep-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-phone-btn:hover {
+  color: var(--gold);
+}
+
+.phone-auth-container {
+  display: none;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; }
+  to { opacity: 1; max-height: 200px; }
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.social-btn.google { background: #DB4437; }
+.social-btn.facebook { background: #3b5998; }
+.social-btn.microsoft { background: #00A1F1; }
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-footer a {
+  color: var(--deep-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+  color: var(--gold);
+}
+
+.form-message {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes formSwitch {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container { width: 95%; }
+  .login-form, .signup-form { padding: 30px; }
+  .social-login { flex-wrap: wrap; }
+}
+
+/* Mobile-only: show one form at a time */
+@media (max-width: 480px) {
+  .form-container {
+    width: 100%;
+    flex-direction: column;
+    transform: none !important;
+  }
+  .login-form, .signup-form {
+    width: 100%;
+    display: none;
+  }
+  .login-form.active, .signup-form.active {
+    display: block;
+  }
+}
