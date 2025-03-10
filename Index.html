@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noor Gateway - Islamic Design</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Quran verses banner -->
+  <div class="quran-banner">
+    <p>"Verily, with hardship comes ease." (94:6)</p>
+    <p>"Indeed, in the creation of the heavens and the earth, and the alternation of the night and the day, are signs for those of understanding." (3:190)</p>
+  </div>
+  <div class="container">
+    <div class="form-container" id="formContainer">
+      <!-- Login Form -->
+      <div class="login-form active">
+        <div class="form-header">
+          <h1>Welcome Back</h1>
+          <p>Continue Your Journey</p>
+        </div>
+        <form id="loginForm">
+          <div class="input-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="submit-btn">Sign In (Email)</button>
+        </form>
+        <!-- Hidden Phone Authentication Container -->
+        <div class="phone-auth-container" id="loginPhoneContainer">
+          <div class="input-group">
+            <input type="text" id="loginPhoneNumber" placeholder="Phone Number (with country code)">
+          </div>
+          <button type="button" id="phoneLoginBtn" class="submit-btn">Sign In with Phone</button>
+        </div>
+        <button type="button" id="toggleLoginPhone" class="toggle-phone-btn">Use Phone Authentication</button>
+        <div class="social-login">
+          <button class="social-btn google"><i class="fab fa-google"></i></button>
+          <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn microsoft"><i class="fab fa-microsoft"></i></button>
+        </div>
+        <div class="form-footer">
+          <p>New here? <a href="#" onclick="switchForm('signup')">Create Account</a></p>
+        </div>
+        <div class="form-message" id="loginMessage"></div>
+      </div>
+      <!-- Signup Form -->
+      <div class="signup-form">
+        <div class="form-header">
+          <h1>Create Account</h1>
+          <p>Begin Your Journey</p>
+        </div>
+        <form id="signupForm">
+          <div class="input-group">
+            <input type="text" placeholder="Full Name" required>
+          </div>
+          <div class="input-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="submit-btn">Sign Up (Email)</button>
+        </form>
+        <!-- Hidden Phone Authentication Container -->
+        <div class="phone-auth-container" id="signupPhoneContainer">
+          <div class="input-group">
+            <input type="text" id="signupPhoneNumber" placeholder="Phone Number (with country code)">
+          </div>
+          <button type="button" id="phoneSignUpBtn" class="submit-btn">Sign Up with Phone</button>
+        </div>
+        <button type="button" id="toggleSignupPhone" class="toggle-phone-btn">Use Phone Authentication</button>
+        <div class="social-login">
+          <button class="social-btn google"><i class="fab fa-google"></i></button>
+          <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+          <button class="social-btn microsoft"><i class="fab fa-microsoft"></i></button>
+        </div>
+        <div class="form-footer">
+          <p>Already have an account? <a href="#" onclick="switchForm('login')">Sign In</a></p>
+        </div>
+        <div class="form-message" id="signupMessage"></div>
+      </div>
+    </div>
+  </div>
+  <!-- reCAPTCHA container -->
+  <div id="recaptcha-container"></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
